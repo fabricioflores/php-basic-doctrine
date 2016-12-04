@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.1.19-MariaDB)
-# Base de datos: mydb
-# Tiempo de Generación: 2016-12-04 16:22:14 +0000
+# Base de datos: miw16_results
+# Tiempo de Generación: 2016-12-04 17:17:57 +0000
 # ************************************************************
 
 
@@ -27,16 +27,16 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `enabled` tinyint(1) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `username` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `last_login` datetime DEFAULT NULL,
-  `token` varchar(45) DEFAULT NULL,
+  `token` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `UNIQ_TOKEN` (`token`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
