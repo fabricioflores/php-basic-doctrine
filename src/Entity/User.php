@@ -74,13 +74,14 @@ class User implements \JsonSerializable
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct($username, $email, $password)
     {
         $this->id = 0;
-        $this->username = '';
-        $this->email = '';
+        $this->username = $username;
+        $this->email = $email;
+        $this->password =  password_hash($password, PASSWORD_DEFAULT);
         $this->enabled = false;
-        $this->token = sha1(uniqid('', true));
+        $this->token = sha1(uniqid($username, true));
     }
 
     /**
