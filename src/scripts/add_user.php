@@ -5,9 +5,15 @@
       echo $argv[0] . ' <username> <email> <password>' . PHP_EOL;
       exit();
   }
-  $user = new User($argv[1], $argv[2], $argv[3]);
 
-  $em = GetEntityManager();
-  $em->persist($user);
-  $em->flush();
+  try {
+    $user = new User($argv[1], $argv[2], $argv[3]);
+
+    $em = GetEntityManager();
+    $em->persist($user);
+    $em->flush();
+  } catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+  }
+
 ?>
