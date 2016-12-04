@@ -89,7 +89,7 @@ class User implements \JsonSerializable
      */
     public function __toString(): string
     {
-        // TODO
+      return "User " . $this->id . ": username: " . $this->username . " email: " . $this->email . PHP_EOL;
     }
 
     /**
@@ -97,6 +97,12 @@ class User implements \JsonSerializable
      */
     public function jsonSerialize(): array
     {
-        // TODO
+      return [
+          'user' => [
+              'username' => $this->username,
+              'email' => $this->email,
+              'enabled' => $this->enabled
+          ]
+      ];
     }
 }

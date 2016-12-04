@@ -1,6 +1,7 @@
-<?php // demoDoctrineDic0116bis - creaProducto.php
+<?php
   require_once __DIR__ . '/../../bootstrap.php';
   use MiW16\Results\Entity\User;
+
   if ($argc != 4) {
       echo $argv[0] . ' <username> <email> <password>' . PHP_EOL;
       exit();
@@ -12,6 +13,7 @@
     $em = GetEntityManager();
     $em->persist($user);
     $em->flush();
+    echo $user;
   } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
   }
