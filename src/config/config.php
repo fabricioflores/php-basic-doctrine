@@ -8,6 +8,7 @@ define('DATABASE_USER', 'miw16');
 define('DATABASE_PASSWD', '*miw16*');
 define('DATABASE_DRIVER', 'pdo_mysql');
 define('DATABASE_CHARSET', 'UTF8');
+define('DATABASE_HOST', 'localhost:3307');
 
 /*
  * configuración Doctrine

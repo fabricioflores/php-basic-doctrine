@@ -19,7 +19,8 @@ function getEntityManager()
         'user'      => DATABASE_USER,
         'password'  => DATABASE_PASSWD,
         'driver'    => DATABASE_DRIVER,
-        'charset'   => DATABASE_CHARSET
+        'charset'   => DATABASE_CHARSET,
+        'host'      => DATABASE_HOST
     );
 
     $config = Setup::createAnnotationMetadataConfiguration(
