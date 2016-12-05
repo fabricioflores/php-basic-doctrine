@@ -7,12 +7,12 @@
   }
 
   $em = GetEntityManager();
-  $user = $em->find('MiW16\Results\Entity\Result', $argv[1]);
-  if ($user) {
+  $result = $em->find('MiW16\Results\Entity\Result', $argv[1]);
+  if ($result) {
     if (in_array('--json', $argv)) {
-      echo json_encode($user) . PHP_EOL;
+      echo json_encode($result) . PHP_EOL;
     } else {
-      echo $user;
+      echo $result;
     }
   }else{
     if (in_array('--json', $argv)) {

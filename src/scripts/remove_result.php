@@ -2,22 +2,21 @@
   require_once __DIR__ . '/../../bootstrap.php';
 
   if ($argc != 2 && !(in_array('--json', $argv))) {
-      echo $argv[0] . ' <username>' . PHP_EOL;
+      echo $argv[0] . ' <id>' . PHP_EOL;
       exit();
   }
 
   $em = GetEntityManager();
-  $user = $em->getRepository('MiW16\Results\Entity\User')->findOneBy(array('username' => $argv[1]));
-  if ($user) {
-    $em->remove($user);
+  $result = $em->find('MiW16\Results\Entity\Result', $argv[1]);
+  if ($result) {
+    $em->remove($result);
     $em->flush();
     if (in_array('--json', $argv)) {
-      echo "Eliminado: " . json_encode($user) . PHP_EOL;
+      echo "Eliminado: " . json_encode($result) . PHP_EOL;
     } else {
-      echo "Eliminado: " . $user;
+      echo "Eliminado: " . $result;
     }
   }else{
     echo "Usuario no encontrado" . PHP_EOL;
   }
-
 ?>
