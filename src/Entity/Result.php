@@ -73,7 +73,14 @@ class Result implements \JsonSerializable
      */
     public function __toString(): string
     {
-        // TODO
+      return "Result " .
+              $this->id .
+              ": result: " .
+              $this->result .
+              " user: " .
+              $this->getUsername() .
+              " time: " .
+              $this->time->format('Y-m-d H:i:s') . PHP_EOL;
     }
 
     /**
@@ -81,7 +88,13 @@ class Result implements \JsonSerializable
      */
     public function jsonSerialize(): array
     {
-        // TODO
+      return [
+          'result' => [
+              'result' => $this->result,
+              'user' => $this->user,
+              'time' => $this->time
+          ]
+      ];
     }
 
     /**
