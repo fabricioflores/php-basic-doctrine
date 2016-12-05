@@ -196,7 +196,7 @@ class Result implements \JsonSerializable
      *
      * @return self
      */
-    public function setUser(User $user)
+    public function setUser($user)
     {
         $this->user = $user;
 
