@@ -59,12 +59,13 @@ class Result implements \JsonSerializable
      * @param User $user
      * @param \DateTime $time
      */
-    public function __construct()
+    public function __construct($result, $user, $time)
     {
-        $this->id     = 0;
-        $this->result = 0;
-        $this->user   = null;
-        $this->time   = new \DateTime('2011-01-01T15:03:01.012345Z');
+        $this->id     = null;
+        $this->result = $result;
+        $this->user   = $user;
+        // $this->time   = new \DateTime('2011-01-01T15:03:01.012345Z');
+        $this->time   = $time;
     }
 
     /**
@@ -78,7 +79,7 @@ class Result implements \JsonSerializable
               ": result: " .
               $this->result .
               " user: " .
-              $this->getUsername() .
+              $this->getUserUsername() .
               " time: " .
               $this->time->format('Y-m-d H:i:s') . PHP_EOL;
     }

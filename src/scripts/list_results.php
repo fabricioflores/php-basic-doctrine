@@ -14,7 +14,6 @@ if (in_array('--json', $argv)) {
 } else {
   $items = 0;
   echo PHP_EOL . sprintf("  %2s %2s %30s %7s\n", 'Id', 'Result', 'User', 'Time');
-  /** @var \MiW16\Results\Entity\User $user */
   foreach ($results as $result) {
       echo sprintf(
           '- %2d: %2d %30s %7s',
