@@ -166,6 +166,15 @@ class Result implements \JsonSerializable
         return $this->user;
     }
 
+    public function getUserUsername()
+    {
+        if ($this->user) {
+          return $this->user->getUsername();
+        }else{
+          return "sin usuario";
+        }
+    }
+
     /**
      * Set the value of User
      *
