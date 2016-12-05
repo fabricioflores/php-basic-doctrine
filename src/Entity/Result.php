@@ -59,12 +59,12 @@ class Result implements \JsonSerializable
      * @param User $user
      * @param \DateTime $time
      */
-    public function __construct(int $result, User $user, \DateTime $time)
+    public function __construct()
     {
         $this->id     = 0;
-        $this->result = $result;
-        $this->user   = $user;
-        $this->time   = $time;
+        $this->result = 0;
+        $this->user   = null;
+        $this->time   = new \DateTime('2011-01-01T15:03:01.012345Z');
     }
 
     /**
@@ -83,4 +83,101 @@ class Result implements \JsonSerializable
     {
         // TODO
     }
+
+    /**
+     * Get the value of Id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of Id
+     *
+     * @param integer id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Result
+     *
+     * @return integer
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * Set the value of Result
+     *
+     * @param integer result
+     *
+     * @return self
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Time
+     *
+     * @return \DateTime
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * Set the value of Time
+     *
+     * @param \DateTime time
+     *
+     * @return self
+     */
+    public function setTime(\DateTime $time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of User
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set the value of User
+     *
+     * @param User user
+     *
+     * @return self
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
 }
