@@ -23,3 +23,9 @@ indexResults:
     defaults:
         _controller: indexResults
     methods:   [GET]
+
+newResult:
+    path:     /results/new
+    defaults:
+        _controller: newResult
+    methods:   [GET]

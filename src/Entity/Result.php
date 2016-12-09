@@ -64,7 +64,6 @@ class Result implements \JsonSerializable
         $this->id     = null;
         $this->result = $result;
         $this->user   = $user;
-        // $this->time   = new \DateTime('2011-01-01T15:03:01.012345Z');
         $this->time   = $time;
     }
 
