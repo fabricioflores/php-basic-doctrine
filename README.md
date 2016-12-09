@@ -23,3 +23,9 @@
 - `php src/scripts/show_result.php <result_id:int>`
 
 - `php src/scripts/show_user.php <username:string>`
+
+## web server
+
+Launch it with:
+`php -S localhost:8080 -t src/`
+running it on root folder.
