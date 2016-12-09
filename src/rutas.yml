@@ -12,6 +12,12 @@ indexUsers:
         _controller: indexUsers
     methods:   [GET]
 
+newUser:
+    path:     /users/new
+    defaults:
+        _controller: newUser
+    methods:   [GET]
+
 indexResults:
     path:     /results
     defaults:
