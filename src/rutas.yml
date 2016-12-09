@@ -1,0 +1,7 @@
+# rutas.yml
+---
+ruta1:
+    path:     /
+    defaults:
+        _controller: inicioAction
+    methods:   [GET]
