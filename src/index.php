@@ -1,6 +1,7 @@
 <?php // demoRouting/src/index.php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'main_controller.php';
 require_once 'users_controller.php';
 
 use Symfony\Component\Routing\Loader\YamlFileLoader;

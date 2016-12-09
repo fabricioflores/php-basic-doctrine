@@ -1,7 +1,19 @@
 # rutas.yml
 ---
-ruta1:
+index:
     path:     /
     defaults:
-        _controller: inicioAction
+        _controller: index
+    methods:   [GET]
+
+indexUsers:
+    path:     /users
+    defaults:
+        _controller: indexUsers
+    methods:   [GET]
+
+indexResults:
+    path:     /results
+    defaults:
+        _controller: indexResults
     methods:   [GET]
